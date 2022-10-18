@@ -13,11 +13,11 @@ public class Kata2 {
         int[] data = {1, 2, 1, 3, 3, 4, 5, 2, 1, 1, 1, 6, 7, 8, 8};
         Map<Integer, Integer> histograma = new HashMap<Integer, Integer>();
         
-        for (int i = 0; i < data.length; i++) {
+        for (int i : data) {
             if(histograma.containsKey(data[i])){
-                histograma.put(data[i], histograma.get(data[i]) + 1);
+                histograma.put(i, histograma.containsKey(i) ? histograma.get(i) + 1 : 1);
             }else{
-                histograma.put(data[i], 1);
+                histograma.put(i, 1);
             }
         }
         
